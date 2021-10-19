@@ -141,7 +141,7 @@
             content: "";
             width: 3px;
             height: 100%;
-            background: theme-color(primary);
+            background: #FFC700;
             display: inline-block;
             position: absolute;
             left: 0;
@@ -329,6 +329,7 @@
         align-items: center;
         justify-content: center;
         color: #ffffff;
+        background-color:#292929;
         i {
           font-size: 0.875rem;
         }
