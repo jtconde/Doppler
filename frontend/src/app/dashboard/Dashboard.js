@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { Line, Doughnut } from 'react-chartjs-2';
 import Slider from "react-slick";
 import { TodoListComponent } from '../apps/TodoList'
 import { VectorMap } from "react-jvectormap"
+
 
 const mapData = {
   "BZ": 75.00,
@@ -14,6 +15,58 @@ const mapData = {
 }
 
 export class Dashboard extends Component {
+
+  data = {
+    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+    datasets: [{
+      label: '# of Votes',
+      data: [10, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+};
+
+options = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      },
+      gridLines: {
+        color: "rgba(204, 204, 204,0.1)"
+      }
+    }],
+    xAxes: [{
+      gridLines: {
+        color: "rgba(204, 204, 204,0.1)"
+      }
+    }]
+  },
+  legend: {
+    display: false
+  },
+  elements: {
+    point: {
+      radius: 0
+    }
+  }
+}
 
   transactionHistoryData =  {
     labels: ["Paypal", "Stripe","Cash"],
@@ -60,10 +113,22 @@ export class Dashboard extends Component {
           <h3>Amount Invested</h3>
         </div>
         <div className="row">
-          <h2>$50,000</h2>
+          <h2 style={{paddingLeft: "12px"}}>$50,000</h2>
           <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
-
-        </div>
+          <p className="text-success ml-2 mb-0 font-weight-medium">+$1,200</p>
+      </div>
+      <div style={{backgroundColor: "#131313", padding: "10px"}}>
+        <p style={{marginBottom: "0"}}>Remaining Balance: $12,000</p>
+      </div>
+      <div className="row">
+                    <div className="col-md-6 grid-margin stretch-card">
+                        <div className="card">
+                            <div className="card-body">
+                                <Line data={this.data} options={this.options} />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
         <div className="row">
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
