@@ -20,7 +20,7 @@ export class Dashboard extends Component {
     labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
     datasets: [{
       label: '# of Votes',
-      data: [10, 19, 3, 5, 2, 3],
+      data: [5, 6, 3, 5, 6, 15],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -30,7 +30,7 @@ export class Dashboard extends Component {
         'rgba(255, 159, 64, 0.2)'
       ],
       borderColor: [
-        'rgba(255,99,132,1)',
+        'rgba(0, 225,63,5)',
         'rgba(54, 162, 235, 1)',
         'rgba(255, 206, 86, 1)',
         'rgba(75, 192, 192, 1)',
@@ -48,15 +48,9 @@ options = {
       ticks: {
         beginAtZero: true
       },
-      gridLines: {
-        color: "rgba(204, 204, 204,0.1)"
-      }
     }],
-    xAxes: [{
-      gridLines: {
-        color: "rgba(204, 204, 204,0.1)"
-      }
-    }]
+    xAxes: [
+     ]
   },
   legend: {
     display: false
@@ -120,13 +114,15 @@ options = {
       <div style={{backgroundColor: "#131313", padding: "10px"}}>
         <p style={{marginBottom: "0"}}>Remaining Balance: $12,000</p>
       </div>
-      <div className="row">
+      <div style={{width: "1600px", height: "400px"}}>
+      <div>
                     <div className="col-md-6 grid-margin stretch-card">
-                        <div className="card">
+                        <div style={{width: "100%", height: "auto"}}>
                             <div className="card-body">
                                 <Line data={this.data} options={this.options} />
                             </div>
                         </div>
+                    </div>
                     </div>
                     </div>
         <div className="row">
