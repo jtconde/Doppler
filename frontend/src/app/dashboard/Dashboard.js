@@ -43,13 +43,18 @@ export class Dashboard extends Component {
 };
 
 options = {
+  maintainAspectRatio: false,
+
   scales: {
     yAxes: [{
       ticks: {
-        beginAtZero: true
+        beginAtZero: true,
+        display:false
       },
     }],
-    xAxes: [
+    xAxes: [{
+      display:false
+    }
      ]
   },
   legend: {
@@ -114,9 +119,9 @@ options = {
       <div style={{backgroundColor: "#131313", padding: "10px"}}>
         <p style={{marginBottom: "0"}}>Remaining Balance: $12,000</p>
       </div>
-      <div style={{width: "1600px", height: "400px"}}>
       <div>
-                    <div className="col-md-6 grid-margin stretch-card">
+      <div>
+                    <div>
                         <div style={{width: "100%", height: "auto"}}>
                             <div className="card-body">
                                 <Line data={this.data} options={this.options} />
@@ -125,6 +130,8 @@ options = {
                     </div>
                     </div>
                     </div>
+                 {/*Buttons Row*/}
+                 
         <div className="row">
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
