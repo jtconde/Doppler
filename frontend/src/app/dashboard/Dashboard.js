@@ -131,6 +131,15 @@ options = {
                     </div>
                     </div>
                  {/*Buttons Row*/}
+                 <div style={{width:"100%", padding:"50px", borderTop:"#fff" }} className="row">
+                 <button type="button" className="btn btn-success btn-fw">1 D</button>
+                 <button type="button" className="btn btn-black btn-fw">1 W</button>
+                 <button type="button" className="btn btn-black btn-fw">1 M</button>
+                 <button type="button" className="btn btn-black btn-fw">3 M</button>
+                 <button type="button" className="btn btn-black btn-fw">1 Y</button>
+                 <button type="button" className="btn btn-black btn-fw">All</button>
+
+                 </div> 
                  
         <div className="row">
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
