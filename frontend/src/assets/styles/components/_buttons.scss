@@ -55,6 +55,13 @@
   }
 }
 
+.chart-btn {
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
 .btn-group {
   .btn {
     + .btn {
@@ -68,6 +75,12 @@
     +.btn-group {
       @extend .ml-2;
     }
+  }
+}
+/*Media Queries*/
+@media only screen and (max-width: 836px) {
+  .chart-btn {
+    width: 60px;
   }
 }
 /*social buttons*/

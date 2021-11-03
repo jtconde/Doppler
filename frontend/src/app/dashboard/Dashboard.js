@@ -117,7 +117,7 @@ options = {
           <p className="text-success ml-2 mb-0 font-weight-medium">+$1,200</p>
       </div>
       <div style={{backgroundColor: "#131313", padding: "10px"}}>
-        <p style={{marginBottom: "0"}}>Remaining Balance: $12,000</p>
+        <p style={{marginBottom: "0", fontSize: "16px"}}>Remaining Balance: $12,000</p>
       </div>
       <div>
       <div>
@@ -131,16 +131,29 @@ options = {
                     </div>
                     </div>
                  {/*Buttons Row*/}
-                 <div style={{width:"100%", padding:"50px", borderTop:"#fff" }} className="row">
-                 <button type="button" className="btn btn-success btn-fw">1 D</button>
-                 <button type="button" className="btn btn-black btn-fw">1 W</button>
-                 <button type="button" className="btn btn-black btn-fw">1 M</button>
-                 <button type="button" className="btn btn-black btn-fw">3 M</button>
-                 <button type="button" className="btn btn-black btn-fw">1 Y</button>
-                 <button type="button" className="btn btn-black btn-fw">All</button>
+                 <div style={{width:"100%", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
+                 <button type="button" className="btn btn-success chart-btn">1 D</button>
+                 <button type="button" className="btn btn-black chart-btn">1 W</button>
+                 <button type="button" className="btn btn-black chart-btn">1 M</button>
+                 <button type="button" className="btn btn-black chart-btn">3 M</button>
+                 <button type="button" className="btn btn-black chart-btn">1 Y</button>
+                 <button type="button" className="btn btn-black chart-btn">All</button>
+                </div>
+                
+                {/*Portfolio Section*/} 
 
-                 </div> 
-                 
+        <p style={{marginBottom: "0", fontSize: "16px"}}>Portfolio</p>
+        <div className="row">
+          <div className="col-12 grid-margin stretch-card">
+            <div className="card">
+              <div className="card-body">
+                
+              </div>
+              </div>
+          </div>
+        </div>
+
+        {/**/}       
         <div className="row">
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
