@@ -144,11 +144,9 @@ options = {
 
         <p style={{marginBottom: "0", fontSize: "16px"}}>Portfolio</p>
         <div className="row">
-          <div className="col-12 grid-margin stretch-card">
-            <div className="card">
+          <div className="portfolio card">
               <div className="card-body">
-                
-              </div>
+                <div className="ellipse"></div>
               </div>
           </div>
         </div>

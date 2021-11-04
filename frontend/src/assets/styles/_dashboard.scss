@@ -3,6 +3,20 @@
     width: 100%;
     height: 300px;
 }
+
+/*Portfolio Component*/
+.ellipse {
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.portfolio{
+  width: 700px;
+  margin: 20px;
+}
+
 .proBanner {
     position: fixed;
     top: 0;
