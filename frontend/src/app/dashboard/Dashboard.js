@@ -116,13 +116,13 @@ options = {
           <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
           <p className="text-success ml-2 mb-0 font-weight-medium">+$1,200</p>
       </div>
-      <div style={{backgroundColor: "#131313", padding: "10px"}}>
+      <div style={{maxWidth:"900px", backgroundColor: "#131313", padding: "10px"}}>
         <p style={{marginBottom: "0", fontSize: "16px"}}>Remaining Balance: $12,000</p>
       </div>
       <div>
       <div>
                     <div>
-                        <div style={{width: "100%", height: "auto"}}>
+                        <div style={{maxWidth: "900px", height: "auto"}}>
                             <div className="card-body">
                                 <Line data={this.data} options={this.options} />
                             </div>
@@ -131,7 +131,7 @@ options = {
                     </div>
                     </div>
                  {/*Buttons Row*/}
-                 <div style={{width:"100%", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
+                 <div style={{maxWidth:"900px", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
                  <button type="button" className="btn btn-success chart-btn">1 D</button>
                  <button type="button" className="btn btn-black chart-btn">1 W</button>
                  <button type="button" className="btn btn-black chart-btn">1 M</button>
@@ -142,11 +142,12 @@ options = {
                 
                 {/*Portfolio Section*/} 
 
-        <p style={{marginBottom: "0", fontSize: "16px"}}>Portfolio</p>
+        <p style={{ fontSize: "16px"}}>Portfolio</p>
         <div className="row">
           <div className="portfolio card">
               <div className="card-body">
                 <div className="ellipse"></div>
+                <div className="label">Bitcoin</div>
               </div>
           </div>
         </div>
