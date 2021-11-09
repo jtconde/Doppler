@@ -10,12 +10,32 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  float: left;
   
 }
 
+.cryptContent {
+  margin-left:60px;
+
+}
+
+.label {
+  font-weight: bold;
+  
+}
 .portfolio{
   width: 700px;
   margin: 30px;
+}
+
+.tokenValue {
+  color: #7e7e7e;
+  
+}
+
+.status {
+  display: inline;
+  
 }
 
 
