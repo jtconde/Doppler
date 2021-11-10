@@ -23,18 +23,31 @@
   font-weight: bold;
   
 }
+
+.labelSpace {
+  width: 500px;
+  
+}
 .portfolio{
-  width: 700px;
-  margin: 30px;
+  width: 500px;
+  margin: 30px auto;
+  
 }
 
+.portfolio-space {
+  max-width: 900px;
+ 
+}
 .tokenValue {
   color: #7e7e7e;
+  float: left;
+
   
 }
 
 .status {
   display: inline;
+  float: right;
   
 }
 
