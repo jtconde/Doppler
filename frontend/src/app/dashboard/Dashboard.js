@@ -107,7 +107,7 @@ options = {
   }
   render () {
     return (
-      <div>
+      <div className="container">
         <div>
           <h3>Amount Invested</h3>
         </div>
@@ -141,14 +141,15 @@ options = {
                 </div>
                 
                 {/*Portfolio Section*/} 
-        <div className="labelSpace">
-        <p style={{ fontSize: "16px"}}>Portfolio</p>
-        </div>
-                {/*Portfolio Card Component*/}
+                
         <div className="portfolio-space">
+        <div className="labelSpace">
+        <p style={{ fontSize: "18px"}}>Portfolio</p>
+        </div>
+        {/*Portfolio Card Component*/}
           <div className="portfolio card">
               <div className="card-body">
-                <div className="ellipse"></div>
+                <div className="ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" /></div>
                 <div className="cryptContent">
                 <div className="label">Bitcoin (BTC)</div>
                 <div className="tokenValue">0.000000365564</div>
@@ -157,27 +158,25 @@ options = {
                 <span className="text-success ml-2 mb-0 font-weight-medium">+$1,200</span>
                 </div>
                 </div>
-                
-              </div>
+                </div>
           </div>
         </div>
 
         {/**/} 
                         {/*Portfolio Card Component*/}
-                        <div className="portfolio-space">
+          <div className="portfolio-space">
           <div className="portfolio card">
               <div className="card-body">
-                <div className="ellipse"></div>
+                <div className="ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/ethereum.png')} alt="face" /></div>
                 <div className="cryptContent">
-                <div className="label">Bitcoin (BTC)</div>
+                <div className="label">Ethereum (ETH)</div>
                 <div className="tokenValue">0.000000365564</div>
                 <div className="status">
                 <span className="text-success ml-2 mb-0 font-weight-medium">+3.5%</span>
                 <span className="text-success ml-2 mb-0 font-weight-medium">+$1,200</span>
                 </div>
                 </div>
-                
-              </div>
+                </div>
           </div>
         </div>
 
