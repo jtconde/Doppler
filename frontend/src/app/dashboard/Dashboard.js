@@ -180,7 +180,24 @@ options = {
           </div>
         </div>
 
-        {/**/}       
+        {/*Watchlist*/}
+         {/*Watchlist Placeholder*/}
+         <div className="portfolio-space">
+        <div className="labelSpace">
+        <p style={{ fontSize: "18px"}}>Watchlist</p>
+        </div>
+        
+          <div className="watchlist-placeholder">
+             <div className="card-body">
+             <p className="placeholder-text">Your Watchlist is empty</p>
+               </div>
+          </div>
+        </div>
+         {/*End Watchlist*/}
+
+         
+
+
         <div className="row">
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">

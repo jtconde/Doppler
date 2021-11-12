@@ -46,6 +46,23 @@
   max-width: 900px;
  
 }
+
+.watchlist-placeholder {
+  max-width: 500px;
+  margin: 30px auto;
+  border-style: dashed;
+  border-color: #292929;
+  border-radius: 4px;
+  font-size: 16px;
+
+    }
+
+.placeholder-text {
+  text-align: center;
+  color:#494949;
+  margin: auto;
+}
+
 .tokenValue {
   color: #7e7e7e;
   float: left;
