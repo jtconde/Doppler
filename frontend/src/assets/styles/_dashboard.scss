@@ -78,6 +78,29 @@
 
 
 /*End Portfolio Component*/
+
+/*Trending Edits*/
+.center-ellipse {
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: auto;
+  
+}
+
+.trend-label {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.trend-change {
+  font-weight: bold;
+  text-align: center;
+}
+/*End Trending Edits*/
+
+
 .proBanner {
     position: fixed;
     top: 0;

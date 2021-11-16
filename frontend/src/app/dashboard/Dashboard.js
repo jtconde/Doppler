@@ -195,30 +195,23 @@ options = {
         </div>
          {/*End Watchlist*/}
 
+         {/*Trending*/}
          
-
-
+        <p style={{ fontSize: "18px"}}>Trending Last 7 Days</p>
+        
+        <div className="portfolio-space">
         <div className="row">
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$12.34</h3>
-                      <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" /></div>
                     </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-success ">
-                      <span className="mdi mdi-arrow-top-right icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Potential growth</h6>
+                <h6 className="trend-label ">Litecoin (LTC)</h6>
+                <p className="trend-change text-success">+20.32%</p>
+              </div>
               </div>
             </div>
-          </div>
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
@@ -279,6 +272,7 @@ options = {
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div className="row">
           <div className="col-md-4 grid-margin stretch-card">
