@@ -197,82 +197,68 @@ options = {
 
          {/*Trending*/}
          
-        <p style={{ fontSize: "18px"}}>Trending Last 7 Days</p>
-        
+         <div className="portfolio-space">
+         <div className="trend-label">  
+         <p style={{ fontSize: "18px"}}>Trending Last 7 Days</p>
+         </div>
+         <div className="see-all">
+         <a href="">See All</a>
+         </div>
         <div className="portfolio-space">
         <div className="row">
+          {/*Start Trending Tile*/}
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" /></div>
+                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/litecoin.png')} alt="crypto icon" /></div>
                     </div>
                 <h6 className="trend-label ">Litecoin (LTC)</h6>
                 <p className="trend-change text-success">+20.32%</p>
               </div>
               </div>
             </div>
+            {/*End Trending Tile*/}
+             {/*Start Trending Tile*/}
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$17.34</h3>
-                      <p className="text-success ml-2 mb-0 font-weight-medium">+11%</p>
+                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/xrp.png')} alt="crypto icon" /></div>
                     </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-success">
-                      <span className="mdi mdi-arrow-top-right icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Revenue current</h6>
+                <h6 className="trend-label ">XRP (XRP)</h6>
+                <p className="trend-change text-success">+30.11%</p>
+              </div>
               </div>
             </div>
-          </div>
+            {/*End Trending Tile*/}
+             {/*Start Trending Tile*/}
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$12.34</h3>
-                      <p className="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p>
+                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/ethereum.png')} alt="crypto icon" /></div>
                     </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-danger">
-                      <span className="mdi mdi-arrow-bottom-left icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Daily Income</h6>
+                <h6 className="trend-label ">Ethereum (ETH)</h6>
+                <p className="trend-change text-success">+18.99%</p>
+              </div>
               </div>
             </div>
-          </div>
+            {/*End Trending Tile*/}
+             {/*Start Trending Tile*/}
           <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$31.53</h3>
-                      <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" /></div>
                     </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-success ">
-                      <span className="mdi mdi-arrow-top-right icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Expense current</h6>
+                <h6 className="trend-label ">Polygon (MATIC)</h6>
+                <p className="trend-change text-success">+19.02%</p>
+              </div>
               </div>
             </div>
-          </div>
-        </div>
+            {/*End Trending Tile*/}
+            </div>
         </div>
         <div className="row">
           <div className="col-md-4 grid-margin stretch-card">
@@ -306,6 +292,7 @@ options = {
                 </div>
               </div>
             </div>
+          </div>
           </div>
           <div className="col-md-8 grid-margin stretch-card">
             <div className="card">
