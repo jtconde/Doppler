@@ -93,14 +93,23 @@
 
 .trend-label {
   margin-top: 10px;
+  text-align: center;
 }
 
 .trend-change {
   font-weight: bold;
   text-align: center;
 }
-/*End Trending Edits*/
 
+.see-all {
+  margin-bottom: 20px;
+  text-align: right;
+}
+/*End Trending Edits*/
+/*Leaderboard Edits*/
+.leaderboard-card {
+  margin-bottom: 20px;
+}
 
 .proBanner {
     position: fixed;
