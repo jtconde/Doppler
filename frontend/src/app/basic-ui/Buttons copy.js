@@ -6,7 +6,7 @@ class Buttons extends Component {
       <div>
         <div className="page-header">
           <h3 className="page-title">
-            Profile
+            Buttons
           </h3>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
