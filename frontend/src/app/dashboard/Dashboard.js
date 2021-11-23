@@ -250,7 +250,7 @@ options = {
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" /></div>
+                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/polygon.png')} alt="crypto icon" /></div>
                     </div>
                 <h6 className="trend-label ">Polygon (MATIC)</h6>
                 <p className="trend-change text-success">+19.02%</p>

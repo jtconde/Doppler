@@ -8,13 +8,18 @@ class Buttons extends Component {
           <h3 className="page-title">
             Profile
           </h3>
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a href="!#" onClick={event => event.preventDefault()}>UI Elements</a></li>
-              <li className="breadcrumb-item active" aria-current="page">Buttons</li>
-            </ol>
-          </nav>
-        </div>
+          </div>
+          <div className="profile-section">
+          <div className="avatar-pic profile-pic">
+                <div className="count-indicator">
+                  <img className="avatar img-xl rounded-circle " src={require('../../assets/images/faces/face15.jpg')} alt="profile" />
+                </div>
+               </div>
+          <div className="username-title">Henry Klein</div>
+          <div className="ranking">Rank #2212</div>
+          </div>
+
+          {/*End Profile Section*/}
         <div className="row">
           <div className="col-12 grid-margin stretch-card">
             <div className="card">
