@@ -1,5 +1,5 @@
 .profile-section {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     max-width: 900px;
 }
 .avatar-pic {
@@ -13,4 +13,24 @@
 }
 .ranking {
     text-align: center;
+}
+.profile-info {
+    background-color: #050505;
+    max-width: 900px;
+    padding: 10px;
+    
+}
+.invested-label, .invested, .difference {
+    margin: 10px;
+    text-align: center;
+}
+
+.invested, .difference {
+    font-weight: bold;
+    font-size: 20px;
+}
+.profile-portfolio {
+   
+    max-width: 900px;
+    margin-top: 0;
 }
