@@ -14,7 +14,7 @@ export class Dropdowns extends Component {
               <div className="card-body">
                 <div className="unread-status"></div>
                 <div className="cryptContent">
-                <div className="note"><b>Dogecoin</b> has increased 15% to $.021032</div>
+                <div className="note"><a href=""><b>Dogecoin</b></a> has increased 15% to $.021032</div>
                 </div>
                 </div>
           </div>
