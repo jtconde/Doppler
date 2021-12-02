@@ -6,13 +6,11 @@ export class BasicTable extends Component {
     return (
       <div>
         <div className="page-header">
-          <h3 className="page-title"> Basic Tables </h3>
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a href="!#" onClick={event => event.preventDefault()}>Tables</a></li>
-              <li className="breadcrumb-item active" aria-current="page">Basic tables</li>
-            </ol>
-          </nav>
+          <h3 className="page-title"> Follows </h3>
+        </div>
+        <div className="following-row">
+          <button type="button" className="btn btn-fw">Follows</button>
+          <button type="button" className="btn btn-dark btn-fw">Following</button>
         </div>
         <div className="row">
           <div className="col-lg-6 grid-margin stretch-card">
