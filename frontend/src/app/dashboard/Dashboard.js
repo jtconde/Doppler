@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Line, Doughnut } from 'react-chartjs-2';
-import Slider from "react-slick";
-import { TodoListComponent } from '../apps/TodoList'
-import { VectorMap } from "react-jvectormap"
+import { Line } from 'react-chartjs-2';
 
 
 const mapData = {
@@ -67,44 +64,7 @@ options = {
   }
 }
 
-  transactionHistoryData =  {
-    labels: ["Paypal", "Stripe","Cash"],
-    datasets: [{
-        data: [55, 25, 20],
-        backgroundColor: [
-          "#111111","#00d25b","#ffab00"
-        ]
-      }
-    ]
-  };
 
-  transactionHistoryOptions = {
-    responsive: true,
-    maintainAspectRatio: true,
-    segmentShowStroke: false,
-    cutoutPercentage: 70,
-    elements: {
-      arc: {
-          borderWidth: 0
-      }
-    },      
-    legend: {
-      display: false
-    },
-    tooltips: {
-      enabled: true
-    }
-  }
-
-  sliderSettings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  }
-  toggleProBanner() {
-    document.querySelector('.proBanner').classList.toggle("hide");
-  }
   render () {
     return (
       <div className="container">
@@ -133,7 +93,7 @@ options = {
                  {/*Buttons Row*/}
                  <div style={{maxWidth:"900px", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
                  <button type="button" className="btn btn-success chart-btn">1 D</button>
-                 <button type="button" className="btn btn-black chart-btn">1 W</button>
+                 <button onClick="this.changeData" type="button" className="btn btn-black chart-btn">1 W</button>
                  <button type="button" className="btn btn-black chart-btn">1 M</button>
                  <button type="button" className="btn btn-black chart-btn">3 M</button>
                  <button type="button" className="btn btn-black chart-btn">1 Y</button>
