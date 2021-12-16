@@ -1,67 +1,229 @@
+import { Chart } from 'chart.js';
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 
 
-const mapData = {
-  "BZ": 75.00,
-  "US": 56.25,
-  "AU": 15.45,
-  "GB": 25.00,
-  "RO": 10.25,
-  "GE": 33.25
+
+
+
+//Data Trends
+const dailyData = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 50.00, 21.25, 32.45, 80.00, 11.25, 93.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
+const weeklyData = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 23.00, 54.25, 11.45, 78.00, 80.25, 34.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
+const monthlyData = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 11.00, 76.25, 90.45, 21.00, 43.25, 60.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
+const tripMonthlyData = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 11.00, 21.25, 30.45, 90.00, 54.25, 32.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
+const yearlyData = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 10.00, 45.25, 56.45, 22.00, 66.25, 77.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
+const allData = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 30.00, 11.25, 88.45, 55.00, 33.25, 90.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
+const options = {
+maintainAspectRatio: false,
+
+scales: {
+  yAxes: [{
+    ticks: {
+      beginAtZero: true,
+      display:false
+    },
+  }],
+  xAxes: [{
+    display:false
+  }
+   ]
+},
+legend: {
+  display: false
+},
+elements: {
+  point: {
+    radius: 0
+  }
+}
 }
 
 export class Dashboard extends Component {
+  constructor(){
+    super()
+    
 
-  data = {
-    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
-    datasets: [{
-      label: '# of Votes',
-      data: [5, 6, 3, 5, 6, 15],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(0, 225,63,5)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1,
-      fill: false
-    }]
-};
+    this.state = {
+      data: data,
+      options: options,
+      data2: dataset2}
 
-options = {
-  maintainAspectRatio: false,
-
-  scales: {
-    yAxes: [{
-      ticks: {
-        beginAtZero: true,
-        display:false
-      },
-    }],
-    xAxes: [{
-      display:false
-    }
-     ]
-  },
-  legend: {
-    display: false
-  },
-  elements: {
-    point: {
-      radius: 0
-    }
+//Tester//
+    this.testButton=this.testButton.bind(this); 
+  //
+  
+  
+    this.dailyTrend = this.dailyTrend.bind(this);
+    this.weeklyTrend = this.weeklyTrend.bind(this);
+    this.monthlyTrend = this.monthlyTrend.bind(this);
+    this.tripMonthTrend = this.tripMonthTrend.bind(this);
+    this.yearlyTrend = this.yearlyTrend.bind(this);
+    this.allTrend = this.allTrend.bind(this);
+  
   }
+
+  
+handleEvent() {
+const prevData = this.state.data.datasets.data;
+const data2 = this.state.data2;
+
+this.setState({
+  data: data2
+})
+}
+
+testButton() {
+  console.log(this.state.data)
 }
 
 
@@ -84,7 +246,7 @@ options = {
                     <div>
                         <div style={{maxWidth: "900px", height: "auto"}}>
                             <div className="card-body">
-                                <Line data={this.data} options={this.options} />
+                                <Line data={this.state.data} options={this.state.options} />
                             </div>
                         </div>
                     </div>
@@ -92,8 +254,8 @@ options = {
                     </div>
                  {/*Buttons Row*/}
                  <div style={{maxWidth:"900px", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
-                 <button type="button" className="btn btn-success chart-btn">1 D</button>
-                 <button onClick="this.changeData" type="button" className="btn btn-black chart-btn">1 W</button>
+                 <button id ="0" type="button" className="btn btn-success chart-btn">1 D</button>
+                 <button id ="week" onClick={this.handleEvent} type="button" className="btn btn-black chart-btn">1 W</button>
                  <button type="button" className="btn btn-black chart-btn">1 M</button>
                  <button type="button" className="btn btn-black chart-btn">3 M</button>
                  <button type="button" className="btn btn-black chart-btn">1 Y</button>
