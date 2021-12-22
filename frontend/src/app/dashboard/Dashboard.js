@@ -1,4 +1,3 @@
-import { Chart } from 'chart.js';
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 
@@ -7,6 +6,32 @@ import { Line } from 'react-chartjs-2';
 
 
 //Data Trends
+const dailyData0 = {
+  labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+  datasets: [{
+    label: '# of Votes',
+    data: [ 50.00, 21.25, 32.45, 80.00, 11.25, 93.25],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(0, 225,63,5)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1,
+    fill: false
+  }]
+};
+
 const dailyData = {
   labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
   datasets: [{
@@ -63,7 +88,7 @@ const monthlyData = {
   labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
   datasets: [{
     label: '# of Votes',
-    data: [ 11.00, 76.25, 90.45, 21.00, 43.25, 60.25],
+    data: [ 60.00, 76.25, 90.45, 21.00, 43.25, 10.25],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -194,9 +219,16 @@ export class Dashboard extends Component {
     
 
     this.state = {
-      data: data,
+      data: dailyData0,
+      dataDaily: dailyData,
+      dataWeekly: weeklyData,
+      dataMonthly: monthlyData,
+      dataTripMonthly: tripMonthlyData,
+      dataYearly: yearlyData,
+      dataAll: allData,
       options: options,
-      data2: dataset2}
+      graphColor: 'red'
+      }
 
 //Tester//
     this.testButton=this.testButton.bind(this); 
@@ -209,25 +241,73 @@ export class Dashboard extends Component {
     this.tripMonthTrend = this.tripMonthTrend.bind(this);
     this.yearlyTrend = this.yearlyTrend.bind(this);
     this.allTrend = this.allTrend.bind(this);
+
+
+   
   
   }
 
-  
-handleEvent() {
-const prevData = this.state.data.datasets.data;
-const data2 = this.state.data2;
+ 
 
+
+dailyTrend() {
+const newData = this.state.dataDaily;
 this.setState({
-  data: data2
+  data: newData
 })
 }
 
+weeklyTrend() {
+  const newData = this.state.dataWeekly;
+  this.setState({
+    data: newData,
+    
+  })
+  
+  }
+
+  monthlyTrend() {
+    const newData = this.state.dataMonthly;
+    this.setState({
+      data: newData,
+      data.datasets.borderColor: graphColor,
+      buttonColor: 'green'
+
+      
+    })
+    }
+
+    tripMonthTrend() {
+      const newData = this.state.dataTripMonthly;
+      this.setState({
+        data: newData
+      })
+      }
+
+      yearlyTrend() {
+        const newData = this.state.dataYearly;
+        this.setState({
+          data: newData
+        })
+        }
+
+        allTrend() {
+          const newData = this.state.dataAll;
+          this.setState({
+            data: newData
+          })
+          }
+
+
+//tester
 testButton() {
   console.log(this.state.data)
 }
 
 
+
   render () {
+    let btn_class = this.state.black ? "greenButton" : "blackButton";
     return (
       <div className="container">
         <div>
@@ -254,12 +334,12 @@ testButton() {
                     </div>
                  {/*Buttons Row*/}
                  <div style={{maxWidth:"900px", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
-                 <button id ="0" type="button" className="btn btn-success chart-btn">1 D</button>
-                 <button id ="week" onClick={this.handleEvent} type="button" className="btn btn-black chart-btn">1 W</button>
-                 <button type="button" className="btn btn-black chart-btn">1 M</button>
-                 <button type="button" className="btn btn-black chart-btn">3 M</button>
-                 <button type="button" className="btn btn-black chart-btn">1 Y</button>
-                 <button type="button" className="btn btn-black chart-btn">All</button>
+                 <button  autoFocus  onClick={this.dailyTrend} type="button" className="start btn-class btn chart-btn">1 D</button>
+                 <button  id ="week" onClick={this.weeklyTrend} type="button" className="btn-class btn btn-black chart-btn">1 W</button>
+                 <button  onClick={this.monthlyTrend} type="button" className="btn-class btn btn-black chart-btn">1 M</button>
+                 <button  onClick={this.tripMonthTrend} type="button" className="btn-class btn btn-black chart-btn">3 M</button>
+                 <button  onClick={this.yearlyTrend} type="button" className="btn-class btn btn-black chart-btn">1 Y</button>
+                 <button  onClick={this.allTrend}type="button" className="btn-class btn btn-black chart-btn">All</button>
                 </div>
                 
                 {/*Portfolio Section*/} 

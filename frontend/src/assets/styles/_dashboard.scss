@@ -13,7 +13,18 @@
   float: left;
   
 }
+.btn-class {
+  background-color: #000;
+}
 
+.btn-class:focus {
+  background-color: green !important;
+}
+
+
+.btn-class:hover {
+  background-color: green;
+}
 .crypto-icon {
   width: 30px;
   margin-left: 5px;
