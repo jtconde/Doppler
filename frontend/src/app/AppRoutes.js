@@ -8,7 +8,9 @@ const Dashboard = lazy(() => import('./dashboard/Dashboard'));
 const Buttons = lazy(() => import('./basic-ui/Buttons'));
 const Dropdowns = lazy(() => import('./basic-ui/Dropdowns'));
 const Typography = lazy(() => import('./basic-ui/Typography'));
-const Crypto = lazy(() => import('./basic-ui/Crypto'));
+const Coin = lazy(() => import('./basic-ui/Coin'));
+const Trending = lazy(() => import('./basic-ui/Trending'));
+
 
 const BasicElements = lazy(() => import('./form-elements/BasicElements'));
 
@@ -35,7 +37,8 @@ class AppRoutes extends Component {
           <Route path="/basic-ui/buttons" component={ Buttons } />
           <Route path="/basic-ui/dropdowns" component={ Dropdowns } />
           <Route path="/basic-ui/typography" component={ Typography } />
-          <Route path="/basic-ui/crypto" component={ Crypto } />
+          <Route path="/basic-ui/coin" component={ Coin } />
+          <Route path="/basic-ui/trending" component={ Trending } />
 
           <Route path="/form-Elements/basic-elements" component={ BasicElements } />
 
