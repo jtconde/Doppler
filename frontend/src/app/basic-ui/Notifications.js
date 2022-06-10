@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dropdown, ButtonGroup } from 'react-bootstrap';
 
-export class Dropdowns extends Component {
+export class Notifications extends Component {
   render() {
     return (
       <div>
@@ -31,4 +31,4 @@ export class Dropdowns extends Component {
   }
 }
 
-export default Dropdowns
+export default Notifications

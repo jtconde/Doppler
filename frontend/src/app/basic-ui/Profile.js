@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Buttons extends Component {
+class Profile extends Component {
   render () {
     return (
       <div>
@@ -73,4 +73,4 @@ class Buttons extends Component {
   }
 }
 
-export default Buttons;
+export default Profile;

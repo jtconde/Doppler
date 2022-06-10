@@ -121,22 +121,22 @@ class Sidebar extends Component {
             </Link>
           </li>
         {/*Profile*/}
-          <li className={ this.isPathActive('/basic-ui/buttons') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
-          <Link className="nav-link" to='/basic-ui/buttons'>   
+          <li className={ this.isPathActive('/basic-ui/profile') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+          <Link className="nav-link" to='/basic-ui/profile'>   
               <span className="menu-icon"><i style={{color: "#cccccc"}} className="mdi mdi-account"></i></span>
                 <span className="menu-title"><Trans>Profile</Trans></span>
                </Link>
               </li>
                {/*Notifications*/}
-          <li className={ this.isPathActive('/basic-ui/dropdowns') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
-          <Link className="nav-link" to='/basic-ui/dropdowns'>  
+          <li className={ this.isPathActive('/basic-ui/notifications') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+          <Link className="nav-link" to='/basic-ui/notifications'>  
               <span className="menu-icon"><i style={{color: "#cccccc"}} className="mdi mdi-bell"></i></span>
               <span className="menu-title"><Trans>Notifications</Trans></span>
              </Link>
           </li>
           {/*Follows*/}
-          <li className={ this.isPathActive('/tables/basic-table') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
-          <Link className="nav-link" to='/tables/basic-table'>  
+          <li className={ this.isPathActive('/basic-ui/follows') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+          <Link className="nav-link" to='/basic-ui/follows'>  
               <span className="menu-icon"><i style={{color: "#cccccc"}} className="mdi mdi-account-multiple"></i></span>
               <span className="menu-title"><Trans>Follows</Trans></span>
               </Link>
