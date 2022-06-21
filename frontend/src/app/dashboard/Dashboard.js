@@ -90,7 +90,7 @@ const monthlyData = {
   labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
   datasets: [{
     label: '# of Votes',
-    data: [ 40.00, 60.00, 76.25, 90.45, 21.00, 43.25, 10.25,],
+    data: [ 40.00, 60.00, 76.25, 90.45, 21.00, 23.25],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -232,10 +232,6 @@ export class Dashboard extends Component {
       
       }
 
-//Tester//
-    this.testButton=this.testButton.bind(this); 
-  //
-  
   
     this.dailyTrend = this.dailyTrend.bind(this);
     this.weeklyTrend = this.weeklyTrend.bind(this);
@@ -256,9 +252,9 @@ dailyTrend() {
 const newData = this.state.dataDaily;
 this.setState({
   data: newData,
-  
-})
-
+}
+)
+console.log("Daily Data Implemented")
 if (dailyData.datasets[0].data[0] > dailyData.datasets[0].data[dailyData.datasets[0].data.length - 1]) {
   dailyData.datasets[0].borderColor = 'red';}
 
@@ -270,7 +266,7 @@ weeklyTrend() {
     data: newData,
     
   })
-
+  console.log("Weekly Data Implemented")
   if (weeklyData.datasets[0].data[0] > weeklyData.datasets[0].data[weeklyData.datasets[0].data.length - 1]) {
     weeklyData.datasets[0].borderColor = 'red';}
   
@@ -281,7 +277,7 @@ weeklyTrend() {
     this.setState({
       data: newData,
     })
-    
+    console.log("Monthly Data Implemented")
     if (monthlyData.datasets[0].data[0] > monthlyData.datasets[0].data[monthlyData.datasets[0].data.length - 1]) {
     monthlyData.datasets[0].borderColor = 'red';}
     
@@ -292,7 +288,7 @@ weeklyTrend() {
       this.setState({
         data: newData
       })
-
+      console.log("Triple Month Data Implemented")
       if (tripMonthlyData.datasets[0].data[0] > tripMonthlyData.datasets[0].data[tripMonthlyData.datasets[0].data.length - 1]) {
         tripMonthlyData.datasets[0].borderColor = 'red';}
 
@@ -303,7 +299,7 @@ weeklyTrend() {
         this.setState({
           data: newData
         })
-
+        console.log("Yearly Data Implemented")
         if (yearlyData.datasets[0].data[0] > yearlyData.datasets[0].data[yearlyData.datasets[0].data.length - 1]) {
           yearlyData.datasets[0].borderColor = 'red';}
         }
@@ -313,6 +309,7 @@ weeklyTrend() {
           this.setState({
             data: newData
           })
+          console.log("All Data Implemented")
           }
 
 
