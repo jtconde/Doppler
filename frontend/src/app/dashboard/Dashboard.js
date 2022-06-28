@@ -7,9 +7,9 @@ import { Line } from 'react-chartjs-2';
 
 //Data Trends
 const dailyData0 = {
-  labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
-    label: 'Price',
+    label: '# of Votes',
     data: [ 50.00, 21.25, 32.45, 30.00, 131.25, 13.25, 29.00],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -33,9 +33,9 @@ const dailyData0 = {
 };
 
 const dailyData = {
-  labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "6:00"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
-    label: 'Price',
+    label: '# of Votes',
     data: [ 50.00, 21.25, 32.45, 30.00, 131.25, 13.25, 29.00],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -59,9 +59,9 @@ const dailyData = {
 };
 
 const weeklyData = {
-  labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
-    label: 'Price',
+    label: '# of Votes',
     data: [ 13.00, 44.25, 44.45, 98.00, 20.25, 23.25, 30.00],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -85,7 +85,7 @@ const weeklyData = {
 };
 
 const monthlyData = {
-  labels: ["2013", "2014", "2014", "2015", "2016", "2017", "2018"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
     label: '# of Votes',
     data: [ 40.00, 60.00, 76.25, 90.45, 21.00, 23.25, 21.22],
@@ -111,7 +111,7 @@ const monthlyData = {
 };
 
 const tripMonthlyData = {
-  labels: ["2013", "2014", "2014", "2015", "2016", "2017", "2018"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
     label: '# of Votes',
     data: [ 11.00, 21.25, 30.45, 90.00, 54.25, 32.25, 39.22],
@@ -137,7 +137,7 @@ const tripMonthlyData = {
 };
 
 const yearlyData = {
-  labels: ["2013", "2014", "2014", "2015", "2016", "2017", "2018"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
     label: '# of Votes',
     data: [ 10.00, 45.25, 56.45, 22.00, 66.25, 77.25, 88.00],
@@ -163,7 +163,7 @@ const yearlyData = {
 };
 
 const allData = {
-  labels: ["2013", "2014", "2014", "2015", "2016", "2017", "2018"],
+  labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
     label: '# of Votes',
     data: [ 30.00, 11.25, 88.45, 55.00, 33.25, 90.25, 100.22],
@@ -219,7 +219,7 @@ export class Dashboard extends Component {
     
 
     this.state = {
-      data: dailyData0,
+      data: dailyData0, 
       dataDaily: dailyData,
       dataWeekly: weeklyData,
       dataMonthly: monthlyData,
@@ -244,87 +244,62 @@ export class Dashboard extends Component {
   }
 
  onLoadGraphStatus() {
-  if (dailyData0.datasets[0].data[0] > dailyData0.datasets[0].data[dailyData.datasets[0].data.length - 1]) {
+  if (dailyData0.datasets[0].data[0] > dailyData0.datasets[0].data[dailyData0.datasets[0].data.length - 1]) {
     dailyData0.datasets[0].borderColor = 'red';}
- }
-
+  }
 
 dailyTrend() {
-const newData = this.state.dataDaily;
 this.setState({
-  data: newData,
+  data: this.state.dataDaily
 }
 )
-console.log("Daily Data Implemented")
 if (dailyData.datasets[0].data[0] > dailyData.datasets[0].data[dailyData.datasets[0].data.length - 1]) {
   dailyData.datasets[0].borderColor = 'red';}
-
 }
 
 weeklyTrend() {
-  const newData = this.state.dataWeekly;
   this.setState({
-    data: newData,
-    
+    data: this.state.dataWeekly    
   })
-  console.log("Weekly Data Implemented")
   if (weeklyData.datasets[0].data[0] > weeklyData.datasets[0].data[weeklyData.datasets[0].data.length - 1]) {
     weeklyData.datasets[0].borderColor = 'red';}
-  
-  }
+}
 
-  monthlyTrend() {
-    const newData = this.state.dataMonthly;
-    this.setState({
-      data: newData,
+monthlyTrend() {
+  this.setState({
+      data: this.state.dataMonthly
     })
-    console.log("Monthly Data Implemented")
     if (monthlyData.datasets[0].data[0] > monthlyData.datasets[0].data[monthlyData.datasets[0].data.length - 1]) {
-    monthlyData.datasets[0].borderColor = 'red';}
-    
-  }
+      monthlyData.datasets[0].borderColor = 'red';}
+    }
 
-    tripMonthTrend() {
-      const newData = this.state.dataTripMonthly;
-      this.setState({
-        data: newData
+tripMonthTrend() {
+    this.setState({
+      data: this.state.dataTripMonthly
       })
-      console.log("Triple Month Data Implemented")
       if (tripMonthlyData.datasets[0].data[0] > tripMonthlyData.datasets[0].data[tripMonthlyData.datasets[0].data.length - 1]) {
         tripMonthlyData.datasets[0].borderColor = 'red';}
-
-      }
+}
 
       yearlyTrend() {
-        const newData = this.state.dataYearly;
         this.setState({
-          data: newData
+          data: this.state.dataYearly
         })
-        console.log("Yearly Data Implemented")
         if (yearlyData.datasets[0].data[0] > yearlyData.datasets[0].data[yearlyData.datasets[0].data.length - 1]) {
           yearlyData.datasets[0].borderColor = 'red';}
         }
 
         allTrend() {
-          const newData = this.state.dataAll;
           this.setState({
-            data: newData
+            data: this.state.dataAll
           })
-          console.log("All Data Implemented")
+          if (allData.datasets[0].data[0] > allData.datasets[0].data[allData.datasets[0].data.length - 1]) {
+          allData.datasets[0].borderColor = 'red';} 
           }
 
-
-//tester
-testButton() {
-  console.log(this.state.data)
-}
-
-
-
-  render () {
-   this.onLoadGraphStatus()
-
-    let btn_class = this.state.black ? "greenButton" : "blackButton";
+          render () {
+  this.onLoadGraphStatus()
+  let btn_class = this.state.black ? "greenButton" : "blackButton";
     return (
       <div className="container">
         <div>
