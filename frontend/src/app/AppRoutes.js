@@ -27,6 +27,7 @@ const Error500 = lazy(() => import('./error-pages/Error500'));
 
 const Login = lazy(() => import('./user-pages/Login'));
 const Register1 = lazy(() => import('./user-pages/Register'));
+const ProfileExternal = lazy(() => import('./user-pages/ProfileExternal'));
 
 
 class AppRoutes extends Component {
@@ -56,6 +57,7 @@ class AppRoutes extends Component {
 
           <Route path="/user-pages/login-1" component={ Login } />
           <Route path="/user-pages/register-1" component={ Register1 } />
+          <Route path="/user-pages/profile-external" component={ ProfileExternal } />
 
           <Route path="/error-pages/error-404" component={ Error404 } />
           <Route path="/error-pages/error-500" component={ Error500 } />
