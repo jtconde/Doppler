@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+
 
 
 
@@ -213,7 +214,14 @@ elements: {
 }
 }
 
+
+
+
+         
+
 export class Dashboard extends Component {
+
+
   constructor(){
     super()
     
@@ -227,6 +235,7 @@ export class Dashboard extends Component {
       dataYearly: yearlyData,
       dataAll: allData,
       options: options,
+      
       
       }
 
@@ -242,6 +251,8 @@ export class Dashboard extends Component {
    
   
   }
+
+
 
  onLoadGraphStatus() {
   if (dailyData0.datasets[0].data[0] > dailyData0.datasets[0].data[dailyData0.datasets[0].data.length - 1]) {
@@ -297,13 +308,24 @@ tripMonthTrend() {
           allData.datasets[0].borderColor = 'red';} 
           }
 
+        
+        
+        
+         
+
           render () {
-  this.onLoadGraphStatus()
+           
+
+            this.onLoadGraphStatus()
   let btn_class = this.state.black ? "greenButton" : "blackButton";
+ 
+ 
     return (
+      
       <div className="container">
         <div>
           <h3>Amount Invested</h3>
+       
         </div>
         <div className="row">
           <h2 style={{paddingLeft: "12px"}}>$50,000</h2>
