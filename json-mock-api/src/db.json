@@ -1,0 +1,54 @@
+{
+    "users": [
+      {
+        "leader_rank": 1,
+        "first_name": "Henry",
+        "last_name": "Klein",
+        "user_name": "hpklein",
+        "email": "hkein@abc.com",
+        "invested": 50000,
+        "balance": 12000,
+        "profile_img": "../../frontend/src/assets/images/faces/face15.jpg"
+      },
+      {
+        "leader_rank": 2,
+        "first_name": "Estella",
+        "last_name": "Bryan",
+        "user_name": "estella",
+        "email": "estella@aol.com",
+        "invested": 1223446.94,
+        "balance": 30000,
+        "profile_img": "../../frontend/src/assets/images/faces/face2.jpg"
+      },
+      {
+        "leader_rank": 3,
+        "first_name": "Lucy",
+        "last_name": "Abbott",
+        "user_name": "lucy_abbott",
+        "email": "labbott@abc.com",
+        "invested": 1122246.94,
+        "balance": 10000,
+        "profile_img": "../../frontend/src/assets/images/faces/face5.jpg"
+      },
+      {
+        "leader_rank": 4,
+        "first_name": "Peter",
+        "last_name": "Gill",
+        "user_name": "gillz",
+        "email": "pgill@abc.com",
+        "invested": 1000421.14,
+        "balance": 40000,
+        "profile_img": "../../frontend/src/assets/images/faces/face3.jpg"
+      },
+      {
+        "leader_rank": 5,
+        "first_name": "Sallie",
+        "last_name": "Reyes",
+        "user_name": "sreyes",
+        "email": "sreyes@abc.com",
+        "invested": 1000000.14,
+        "balance": 9000,
+        "profile_img": "../../frontend/src/assets/images/faces/face4.jpg"
+      }
+    ]
+  }
