@@ -1,12 +1,8 @@
 import React, { Component, useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 
+//Data Trend Objects 
 
-
-
-
-
-//Data Trends
 const dailyData0 = {
   labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   datasets: [{
@@ -214,18 +210,12 @@ elements: {
 }
 }
 
-
-
-
-         
-
 export class Dashboard extends Component {
 
 
   constructor(){
     super()
     
-
     this.state = {
       data: dailyData0, 
       dataDaily: dailyData,
@@ -236,10 +226,9 @@ export class Dashboard extends Component {
       dataAll: allData,
       options: options,
       
-      
       }
 
-  
+  // Binding Trends
     this.dailyTrend = this.dailyTrend.bind(this);
     this.weeklyTrend = this.weeklyTrend.bind(this);
     this.monthlyTrend = this.monthlyTrend.bind(this);
@@ -247,281 +236,268 @@ export class Dashboard extends Component {
     this.yearlyTrend = this.yearlyTrend.bind(this);
     this.allTrend = this.allTrend.bind(this);
 
+ }
 
-   
-  
+colorSwitcher(trendSet) {
+  if (trendSet.datasets[0].data[0] > trendSet.datasets[0].data[trendSet.datasets[0].data.length - 1]) 
+  {
+    trendSet.datasets[0].borderColor = 'red';
   }
+}
 
+// Graph Button Events
 
-
- onLoadGraphStatus() {
-  if (dailyData0.datasets[0].data[0] > dailyData0.datasets[0].data[dailyData0.datasets[0].data.length - 1]) {
-    dailyData0.datasets[0].borderColor = 'red';}
+onLoadGraphStatus() {
+  this.colorSwitcher(dailyData0)
   }
 
 dailyTrend() {
-this.setState({
-  data: this.state.dataDaily
-}
+  this.setState({
+    data: this.state.dataDaily
+  }
 )
-if (dailyData.datasets[0].data[0] > dailyData.datasets[0].data[dailyData.datasets[0].data.length - 1]) {
-  dailyData.datasets[0].borderColor = 'red';}
+this.colorSwitcher(dailyData)
 }
 
 weeklyTrend() {
   this.setState({
     data: this.state.dataWeekly    
   })
-  if (weeklyData.datasets[0].data[0] > weeklyData.datasets[0].data[weeklyData.datasets[0].data.length - 1]) {
-    weeklyData.datasets[0].borderColor = 'red';}
+ this.colorSwitcher(weeklyData)
 }
 
 monthlyTrend() {
   this.setState({
       data: this.state.dataMonthly
     })
-    if (monthlyData.datasets[0].data[0] > monthlyData.datasets[0].data[monthlyData.datasets[0].data.length - 1]) {
-      monthlyData.datasets[0].borderColor = 'red';}
-    }
+  this.colorSwitcher(monthlyData)
+}
 
 tripMonthTrend() {
     this.setState({
       data: this.state.dataTripMonthly
       })
-      if (tripMonthlyData.datasets[0].data[0] > tripMonthlyData.datasets[0].data[tripMonthlyData.datasets[0].data.length - 1]) {
-        tripMonthlyData.datasets[0].borderColor = 'red';}
+    this.colorSwitcher(tripMonthlyData)
 }
 
-      yearlyTrend() {
-        this.setState({
-          data: this.state.dataYearly
-        })
-        if (yearlyData.datasets[0].data[0] > yearlyData.datasets[0].data[yearlyData.datasets[0].data.length - 1]) {
-          yearlyData.datasets[0].borderColor = 'red';}
-        }
+yearlyTrend() {
+    this.setState({
+      data: this.state.dataYearly
+      })
+    this.colorSwitcher(yearlyData)
+}
 
-        allTrend() {
-          this.setState({
-            data: this.state.dataAll
-          })
-          if (allData.datasets[0].data[0] > allData.datasets[0].data[allData.datasets[0].data.length - 1]) {
-          allData.datasets[0].borderColor = 'red';} 
-          }
+allTrend() {
+    this.setState({
+      data: this.state.dataAll
+      })
+    this.colorSwitcher(allData)
+}
 
         
-        
-        
-         
+render () {
 
-          render () {
-           
+// Load initial graph color
+this.onLoadGraphStatus()
 
-            this.onLoadGraphStatus()
-  let btn_class = this.state.black ? "greenButton" : "blackButton";
+// Load initial graph button color
+let btn_class = this.state.black ? "greenButton" : "blackButton";
  
- 
-    return (
+ return (
       
-      <div className="container">
-        <div>
-          <h3>Amount Invested</h3>
-       
+  <div className="container">
+    <div>
+      <h3>Amount Invested</h3>
+    </div>
+  <div className="row">
+    <h2 style={{paddingLeft: "12px"}}>$50,000</h2>
+    <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+    <p className="text-success ml-2 mb-0 font-weight-medium">+$1,200</p>
+  </div>
+  <div style={{maxWidth:"900px", backgroundColor: "#131313", padding: "10px"}}>
+    <p style={{marginBottom: "0", fontSize: "16px"}}>Remaining Balance: $12,000</p>
+  </div>
+  <div>
+    <div>
+      <div>
+        <div style={{maxWidth: "900px", height: "auto"}}>
+          <div className="card-body">
+            <Line data={this.state.data} options={this.state.options} borderColor={this.state.graphColor} />
+          </div>
         </div>
-        <div className="row">
-          <h2 style={{paddingLeft: "12px"}}>$50,000</h2>
-          <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
-          <p className="text-success ml-2 mb-0 font-weight-medium">+$1,200</p>
       </div>
-      <div style={{maxWidth:"900px", backgroundColor: "#131313", padding: "10px"}}>
-        <p style={{marginBottom: "0", fontSize: "16px"}}>Remaining Balance: $12,000</p>
+    </div>
+  </div>
+  {/*Buttons Row*/}
+  <div style={{maxWidth:"900px", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
+    <button autoFocus  onClick={this.dailyTrend} type="button" className="start btn-class btn chart-btn">1 D</button>
+    <button id ="week" onClick={this.weeklyTrend} type="button" className="btn-class btn btn-black chart-btn">1 W</button>
+    <button onClick={this.monthlyTrend} type="button" className="btn-class btn btn-black chart-btn">1 M</button>
+    <button onClick={this.tripMonthTrend} type="button" className="btn-class btn btn-black chart-btn">3 M</button>
+    <button onClick={this.yearlyTrend} type="button" className="btn-class btn btn-black chart-btn">1 Y</button>
+    <button onClick={this.allTrend}type="button" className="btn-class btn btn-black chart-btn">All</button>
+  </div>
+  {/*Portfolio Section*/} 
+  <div className="portfolio-space">
+    <div className="labelSpace">
+      <p style={{ fontSize: "18px"}}>Portfolio</p>
+    </div>
+  {/*Portfolio Card Component*/}
+    <div className="portfolio card">
+      <div className="card-body">
+        <div className="ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" />
+        </div>
+          <div className="cryptContent">
+            <div className="label">Bitcoin (BTC)
+            </div>
+              <div className="tokenValue">0.000000365564
+              </div>
+              <div className="status">
+                  <span className="text-success ml-2 mb-0 font-weight-medium">+3.5%</span>
+                  <span className="text-success ml-2 mb-0 font-weight-medium">+$1,200</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-      <div>
-                    <div>
-                        <div style={{maxWidth: "900px", height: "auto"}}>
-                            <div className="card-body">
-                                <Line data={this.state.data} options={this.state.options} borderColor={this.state.graphColor} />
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                 {/*Buttons Row*/}
-                 <div style={{maxWidth:"900px", padding:"30px", borderTop:"solid 1px #2b2b2b" }} className="chartdiv row">
-                 <button  autoFocus  onClick={this.dailyTrend} type="button" className="start btn-class btn chart-btn">1 D</button>
-                 <button  id ="week" onClick={this.weeklyTrend} type="button" className="btn-class btn btn-black chart-btn">1 W</button>
-                 <button  onClick={this.monthlyTrend} type="button" className="btn-class btn btn-black chart-btn">1 M</button>
-                 <button  onClick={this.tripMonthTrend} type="button" className="btn-class btn btn-black chart-btn">3 M</button>
-                 <button  onClick={this.yearlyTrend} type="button" className="btn-class btn btn-black chart-btn">1 Y</button>
-                 <button  onClick={this.allTrend}type="button" className="btn-class btn btn-black chart-btn">All</button>
+  {/*Portfolio Card Component*/}
+      <div className="portfolio-space">
+        <div className="portfolio card">
+          <div className="card-body">
+            <div className="ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/ethereum.png')} alt="face" /></div>
+              <div className="cryptContent">
+                <div className="label">Ethereum (ETH)
                 </div>
-                
-                {/*Portfolio Section*/} 
-                
+                <div className="tokenValue">0.000000365564
+                </div>
+                <div className="status">
+                  <span className="text-success ml-2 mb-0 font-weight-medium">+3.5%</span>
+                  <span className="text-success ml-2 mb-0 font-weight-medium">+$1,200</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  {/*Watchlist*/}
+  {/*Watchlist Placeholder*/}
         <div className="portfolio-space">
-        <div className="labelSpace">
-        <p style={{ fontSize: "18px"}}>Portfolio</p>
-        </div>
-        {/*Portfolio Card Component*/}
-          <div className="portfolio card">
-              <div className="card-body">
-                <div className="ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/bitcoin.png')} alt="crypto icon" /></div>
-                <div className="cryptContent">
-                <div className="label">Bitcoin (BTC)</div>
-                <div className="tokenValue">0.000000365564</div>
-                <div className="status">
-                <span className="text-success ml-2 mb-0 font-weight-medium">+3.5%</span>
-                <span className="text-success ml-2 mb-0 font-weight-medium">+$1,200</span>
-                </div>
-                </div>
-                </div>
+          <div className="labelSpace">
+            <p style={{ fontSize: "18px"}}>Watchlist</p>
           </div>
-        </div>
-
-        {/**/} 
-                        {/*Portfolio Card Component*/}
-          <div className="portfolio-space">
-          <div className="portfolio card">
-              <div className="card-body">
-                <div className="ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/ethereum.png')} alt="face" /></div>
-                <div className="cryptContent">
-                <div className="label">Ethereum (ETH)</div>
-                <div className="tokenValue">0.000000365564</div>
-                <div className="status">
-                <span className="text-success ml-2 mb-0 font-weight-medium">+3.5%</span>
-                <span className="text-success ml-2 mb-0 font-weight-medium">+$1,200</span>
-                </div>
-                </div>
-                </div>
-          </div>
-        </div>
-
-        {/*Watchlist*/}
-         {/*Watchlist Placeholder*/}
-         <div className="portfolio-space">
-        <div className="labelSpace">
-        <p style={{ fontSize: "18px"}}>Watchlist</p>
-        </div>
-        
           <div className="watchlist-placeholder">
-             <div className="card-body">
+            <div className="card-body">
              <p className="placeholder-text">Your Watchlist is empty</p>
-               </div>
+            </div>
           </div>
         </div>
-         {/*End Watchlist*/}
-
-         {/*Trending*/}
-         
-         <div className="portfolio-space">
-           
-         <div className="trend-title">  
-         <p style={{ fontSize: "18px"}}>Trending Last 7 Days</p>
-         </div>
-         
-         
-        
-        <div className="row">
-          {/*Start Trending Tile*/}
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/litecoin.png')} alt="crypto icon" /></div>
+  {/*End Watchlist*/}
+  {/*Trending*/}
+        <div className="portfolio-space">
+          <div className="trend-title">  
+            <p style={{ fontSize: "18px"}}>Trending Last 7 Days</p>
+          </div>
+          <div className="row">
+  {/*Start Trending Tile*/}
+            <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
+              <div className="card">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/litecoin.png')} alt="crypto icon" />
                     </div>
+                  </div>
                 <h6 className="trend-label ">Litecoin (LTC)</h6>
                 <p className="trend-change text-success">+20.32%</p>
-              </div>
+                </div>
               </div>
             </div>
-            {/*End Trending Tile*/}
-             {/*Start Trending Tile*/}
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/xrp.png')} alt="crypto icon" /></div>
+  {/*End Trending Tile*/}
+  {/*Start Trending Tile*/}
+            <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
+              <div className="card">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/xrp.png')} alt="crypto icon" />
                     </div>
+                  </div>
                 <h6 className="trend-label ">XRP (XRP)</h6>
                 <p className="trend-change text-success">+30.11%</p>
-              </div>
+                </div>
               </div>
             </div>
-            {/*End Trending Tile*/}
-             {/*Start Trending Tile*/}
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/ethereum.png')} alt="crypto icon" /></div>
+  {/*End Trending Tile*/}
+  {/*Start Trending Tile*/}
+            <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
+              <div className="card">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/ethereum.png')} alt="crypto icon" />
                     </div>
+                  </div>
                 <h6 className="trend-label ">Ethereum (ETH)</h6>
                 <p className="trend-change text-success">+18.99%</p>
-              </div>
+                </div>
               </div>
             </div>
-            {/*End Trending Tile*/}
-             {/*Start Trending Tile*/}
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/polygon.png')} alt="crypto icon" /></div>
+  {/*End Trending Tile*/}
+  {/*Start Trending Tile*/}
+            <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
+              <div className="card">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="center-ellipse"><img className="crypto-icon" src={require('../../assets/images/mock-crypto/polygon.png')} alt="crypto icon" />
                     </div>
+                  </div>
                 <h6 className="trend-label ">Polygon (MATIC)</h6>
                 <p className="trend-change text-success">+19.02%</p>
+                </div>
               </div>
-              </div>
-           </div>
-            {/*End Trending Tile*/}
-            
             </div>
-            
+  {/*End Trending Tile*/}
+          </div>
         </div>
         <div className="portfolio-space">
-            <div className="see-all">
+          <div className="see-all">
          <a href="">See All Trending</a>
-         </div>
-            </div>
-            {/*End Trending Section*/}
-            {/*Start Leaderboard Section*/}
-        <div className="leaderboard-card portfolio-space">
-            <div className="card">
-              <div className="card-body">
-                <h4 className="card-title">Leaderboard</h4>
-                <div className="table-responsive">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
-                              #
-                            </label>
-                          </div>
-                        </th>
-                        <th> Username </th>
-                        <th> Amount Invested </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div className="form-check form-check-muted m-0">
-                            <label className="form-check-label">
+        </div>
+      </div>
+  {/*End Trending Section*/}
+  {/*Start Leaderboard Section*/}
+      <div className="leaderboard-card portfolio-space">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">Leaderboard</h4>
+              <div className="table-responsive">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>
+                        <div className="form-check form-check-muted m-0">
+                          <label className="form-check-label">
+                            #
+                          </label>
+                        </div>
+                      </th>
+                      <th> Username </th>
+                      <th> Amount Invested </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div className="form-check form-check-muted m-0">
+                          <label className="form-check-label">
                               1
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="d-flex">
-                            <img src={require('../../assets/images/faces/face1.jpg')} alt="face" />
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="d-flex">
+                          <img src={require('../../assets/images/faces/face1.jpg')} alt="face" />
                             <span className="pl-2">Henry Klein</span>
-                          </div>
-                        </td>
-                        <td> $1,359,255.32 </td>
-                        
-                      </tr>
+                        </div>
+                      </td>
+                      <td> $1,359,255.32 </td>
+                    </tr>
                       <tr>
                         <td>
                           <div className="form-check form-check-muted m-0">
@@ -533,7 +509,7 @@ tripMonthTrend() {
                         <td>
                           <div className="d-flex">
                             <img src={require('../../assets/images/faces/face2.jpg')} alt="face" />
-                            <span className="pl-2">Estella Bryan</span>
+                              <span className="pl-2">Estella Bryan</span>
                           </div>
                         </td>
                         <td> $1,223,446.94 </td>
@@ -592,13 +568,10 @@ tripMonthTrend() {
               </div>
             </div>
           </div>
-       
-
-        {/*End Leaderboard*/}
-
-      </div> 
-    );
+  {/*End Leaderboard*/}
+        </div> 
+      );
+    }
   }
-}
 
 export default Dashboard;
