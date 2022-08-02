@@ -8,21 +8,8 @@ const dailyData0 = {
   datasets: [{
     label: '# of Votes',
     data: [ 50.00, 21.25, 32.45, 30.00, 131.25, 13.25, 29.00, 30.00, 34.00, 30.00, 28.00, 29.00, 27.00, 25.00],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'rgba(0, 225,63,5)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -35,21 +22,8 @@ const dailyData = {
   datasets: [{
     label: '# of Votes',
     data: [ 50.00, 21.25, 32.45, 30.00, 131.25, 13.25, 29.00, 30.00, 34.00, 30.00, 28.00, 29.00, 27.00, 25.00],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'rgba(0, 225,63,5)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -62,21 +36,8 @@ const weeklyData = {
   datasets: [{
     label: '# of Votes',
     data: [ 13.00, 44.25, 44.45, 98.00, 20.25, 23.25, 30.00, 32.00, 34.00, 33.00, 36.00, 38.00, 40.00, 39.00],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'rgba(0, 225,63,5)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -89,21 +50,8 @@ const monthlyData = {
   datasets: [{
     label: '# of Votes',
     data: [ 40.00, 60.00, 76.25, 90.45, 21.00, 23.25, 21.22, 23.00, 26.00, 31.00, 29.00, 26.00, 29.00, 25.00],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'rgba(0, 225,63,5)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -116,21 +64,8 @@ const tripMonthlyData = {
   datasets: [{
     label: '# of Votes',
     data: [ 11.00, 21.25, 30.45, 90.00, 54.25, 32.25, 39.22, 22.00, 26.00, 30.00, 33.00, 37.00, 40.00, 38.00],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'rgba(0, 225,63,5)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -143,16 +78,8 @@ const yearlyData = {
   datasets: [{
     label: '# of Votes',
     data: [ 10.00, 45.25, 56.45, 22.00, 66.25, 77.25, 88.00, 82.11, 86.31, 90.33, 92.00, 91.88, 99.00, 97.00],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'red'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -165,21 +92,8 @@ const allData = {
   datasets: [{
     label: '# of Votes',
     data: [ 30.00, 11.25, 88.45, 55.00, 33.25, 90.25, 100.22, 103.22, 107.11, 107.00, 103.22, 100.00, 102.11, 104.11],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)'
-    ],
     borderColor: [
-      'rgba(0, 225,63,5)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'
+      'rgba(0, 225,63,5)'
     ],
     borderWidth: 1,
     fill: false,
@@ -243,7 +157,9 @@ export class Dashboard extends Component {
 colorSwitcher(trendSet) {
   if (trendSet.datasets[0].data[0] > trendSet.datasets[0].data[trendSet.datasets[0].data.length - 1]) 
   {
-    trendSet.datasets[0].borderColor = 'red';
+    trendSet.datasets[0].borderColor = 'rgba(255, 0, 0, 1)';
+  } else {
+    trendSet.datasets[0].borderColor = 'rgba(0, 225,63,5)'
   }
 }
 
